@@ -1,0 +1,62 @@
+{{!--
+    This partial renders the <body> of the HTML page.
+    @api public
+--}}
+<p><img src="https://cloud.githubusercontent.com/assets/668093/12567089/0ac42774-c372-11e5-97eb-00baf0fccc37.jpg" alt="OpenMRS" style="width: 100%"/></p>
+
+<h1>{{info.title}} <span class="omrs-api-version">v{{info.version}}</span></h1>
+<p>{{md info.description}}</p>
+
+<h2>Overview</h2>
+<p>
+    This document is a summary of the OpenMRS API as implemented by the <a href="https://wiki.openmrs.org/display/docs/REST+Module">REST Module</a>. More details about how
+    to develop an API client can be found on the <a href="https://wiki.openmrs.org/display/docs/REST+Web+Services+API+For+Clients">OpenMRS wiki</a>.
+</p>
+
+{{>swagger/securityDefinitions}}
+
+{{#if showTagSummary}}
+    {{>swagger/tags}}
+{{else}}
+    {{>swagger/summary}}
+{{/if}}
+
+{{>swagger/paths paths=paths}}
+
+{{>swagger/parameterDefinitions parameters=parameters}}
+
+{{>swagger/responseDefinitions responses=responses}}
+
+{{>swagger/definitions definitions=definitions}}
+
+<h2>Component Versions</h2>
+<p>
+    The documentation above was automatically generated from a system running the
+    following OpenMRS components.
+    <table class="table table-bordered table-condensed swagger--summary">
+        <tr>
+            <th>Component</th>
+            <th>Version</th>
+        </tr>
+        <tr>
+            <td>openmrs-core</td>
+            <td>{{property (property info "x-versions") "platform"}}</td>
+        <tr>
+        {{#each (property (property info "x-versions") "modules")}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.version}}</td>
+            <tr>
+        {{/each}}
+    </table>
+</p>
+
+<h2>License</h2>
+<p>
+    <a href="{{info.license.url}}">{{info.license.name}}</a> © <a href="{{info.contact.url}}">{{info.contact.name}}</a>
+</p>
+
+<br/>
+<p>
+    <div class="omrs-api-footer">Made with ♥ by <img src="https://raw.githubusercontent.com/openmrs/openmrs-core/cd16d4170043bc0c4f4e19488d813bb6cdbc1727/webapp/src/main/webapp/images/openmrs-favicon.png"</div>
+</p>

@@ -1,0 +1,21 @@
+{{!--
+ Renders the security-section of the HTML-page
+ TODO: Parameters
+ @api public
+--}}
+
+{{#if securityDefinitions}}
+    <h2>Authorization</h2>
+    <div id="security-definition-{{@key}}" class="panel panel-security-definition panel-security-definition-{{type}}">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="security-name">Basic</span> <strong><span class="sw-security-definition-{{type}}"></span></strong></h3>
+        </div>
+        <div class="panel-body">
+            <section class="sw-security-properties">
+                The OpenMRS API uses HTTP basic access authentication with your OpenMRS username and password. For example:
+                <br/><br/>
+                <pre>curl -u admin:Admin123 -i 'http://localhost:8080/openmrs/ws/rest/v1/concept'</pre>
+            </section>
+        </div>
+    </div>
+{{/if}}

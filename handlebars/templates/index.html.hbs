@@ -1,0 +1,27 @@
+{{!--
+    Default template for rendering the HTML-page.
+    It can be replaced by another template if needed. However, in the average case,
+    it should be left unmodified since it calls partials that can be overridden instead.
+    The template includes the result of the Less-compiler (`main.css`)
+    and places the other partials (`base/header`, `base/body` and `base/footer`)
+    above, within and below a `div.container`-element.
+    @public
+--}}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon"
+        type="image/png"
+        href="https://raw.githubusercontent.com/openmrs/openmrs-core/cd16d4170043bc0c4f4e19488d813bb6cdbc1727/webapp/src/main/webapp/images/openmrs-favicon.png">
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>{{>base/title}}</title>
+</head>
+<body>
+{{>base/header}}
+<div class="container">
+    {{>base/body}}
+</div>
+{{>base/footer}}
+</body>
+</html>
