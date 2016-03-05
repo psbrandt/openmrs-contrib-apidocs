@@ -1,2 +1,4 @@
 test
 swaggerSpec.json
+dist
+node_modules/
