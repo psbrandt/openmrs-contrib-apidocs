@@ -36,7 +36,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "http://petstore.swagger.io/v2/swagger.json";
+        url = "http://localhost:8081/openmrs-standalone/module/webservices/rest/swagger.json";
       }
 
       hljs.configure({
@@ -118,8 +118,6 @@
     </form>
   </div>
 </div>
-
-<div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
-<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+<div id="swagger-ui-container" class="swagger-ui-wrap"><img src="images/inprogress.gif" style="display: block; margin-left: auto; margin-right: auto;"/></div>
 </body>
 </html>
