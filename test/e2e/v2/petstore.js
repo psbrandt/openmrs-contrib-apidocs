@@ -57,26 +57,26 @@ describe('swagger 2.0 spec tests', function () {
     });
   });
 
-  it('should find the contact name element', function(done){
+  it('should not find the contact name element', function(done){
     var locator = webdriver.By.css('.info_name');
     driver.isElementPresent(locator).then(function (isPresent) {
-      expect(isPresent).to.be.true;
+      expect(isPresent).to.be.false;
       done();
     });
   });
 
-  it('should find the contact email element', function(done){
+  it('should not find the contact email element', function(done){
     var locator = webdriver.By.css('.info_email');
     driver.isElementPresent(locator).then(function (isPresent) {
-      expect(isPresent).to.be.true;
+      expect(isPresent).to.be.false;
       done();
     });
   });
 
-  it('should find the contact url element', function(done){
+  it('should not find the contact url element', function(done){
     var locator = webdriver.By.css('.info_url');
     driver.isElementPresent(locator).then(function (isPresent) {
-      expect(isPresent).to.be.true;
+      expect(isPresent).to.be.false;
       done();
     });
   });
